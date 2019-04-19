@@ -5,9 +5,9 @@ npm install
 npm run start
 ```
 
-配置webpack开发环境，热更新
+配置webpack开发环境，热更新，sass-loader，babel-loader，eslint等等
 
-链接mongoDB，熟悉mongoDB语法
+链接mongoDB，熟悉mongoDB语法，有点多，大致看了增删改查，用的时候再查
 
 mongoDB存储数据是类似json的结构
 
@@ -60,4 +60,6 @@ https://docs.mongodb.com/manual/tutorial/query-documents/
     db.[collection_name].find()
 ```
 
-安装antd-mobile，配置按需加载，查看官网https://mobile.ant.design/docs/react/introduce-cn
+安装antd-mobile，配置按需加载，查看官网https://mobile.ant.design/docs/react/introduce-cn，配置css-loader
+
+安装redux，熟悉一下
