@@ -60,6 +60,10 @@ https://docs.mongodb.com/manual/tutorial/query-documents/
     db.[collection_name].find()
 ```
 
+### 熟悉react
+
+  1. props的值都是未经转义的，即`\\`传递给子组件，接收到的也是`\\`
+
 安装antd-mobile，配置按需加载，查看官网https://mobile.ant.design/docs/react/introduce-cn，配置css-loader
 
 安装redux，熟悉一下

@@ -1,26 +1,39 @@
 import React, { Component } from 'react'
-import { Button } from 'antd-mobile'
-import {add} from './store/actions'
+import TemperatureInput from './componets/TempereatureInput'
+
+function WelcomeDialog() {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        Welcome
+      </h1>
+      <p className="Dialog-message">
+        Thank you for visiting our spacecraft!
+      </p>
+    </FancyBorder>
+  );
+}
+function FancyBorder(props) {
+  console.log(props)
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  );
+}
 
 class App extends Component {
   constructor (props) {
     super(props)
-    console.log(this.props.store)
-    this.click = this.click.bind(this)
-    this.store = this.props.store
   }
   render() {
+    let t = 1
     return (
       <div>
-        <h1>Hello world</h1>
-        <Button>button</Button>
-        <div onClick={this.click}>{this.store.getState()}</div>
+        <WelcomeDialog />
+        <TemperatureInput message='\\' num='1' num1={{t}}/>
       </div>
     )
-  }
-  click () {
-    this.store.dispatch(add())
-    console.log(this.store.getState())
   }
 }
 
