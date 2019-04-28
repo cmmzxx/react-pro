@@ -14,7 +14,6 @@ function WelcomeDialog() {
   );
 }
 function FancyBorder(props) {
-  console.log(props)
   return (
     <div className={'FancyBorder FancyBorder-' + props.color}>
       {props.children}
@@ -31,7 +30,7 @@ class App extends Component {
     return (
       <div>
         <WelcomeDialog />
-        <TemperatureInput message='\\' num='1' num1={{t}}/>
+        <TemperatureInput message='&' num='1' num1={{t}}/>
       </div>
     )
   }

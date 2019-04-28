@@ -7,6 +7,7 @@ import store from './store/index'
 
 FastClick.attach(document.body)
 
+
 function render () {
   ReactDom.render(<App store={store}/>, document.getElementById('app'))
 }

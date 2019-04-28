@@ -63,6 +63,7 @@ https://docs.mongodb.com/manual/tutorial/query-documents/
 ### 熟悉react
 
   1. props的值都是未经转义的，即`\\`传递给子组件，接收到的也是`\\`
+  2. ReactDom.createPortal(el,node)，el是ReactElement，node是dom节点，el最终将被挂载在node下，作为node的第一个子元素
 
 安装antd-mobile，配置按需加载，查看官网https://mobile.ant.design/docs/react/introduce-cn，配置css-loader
 
