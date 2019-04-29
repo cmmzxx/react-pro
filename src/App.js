@@ -24,11 +24,15 @@ function FancyBorder(props) {
 class App extends Component {
   constructor (props) {
     super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick () {
+    console.log('portal')
   }
   render() {
     let t = 1
     return (
-      <div>
+      <div onClick={this.handleClick}>
         <WelcomeDialog />
         <TemperatureInput message='&' num='1' num1={{t}}/>
       </div>

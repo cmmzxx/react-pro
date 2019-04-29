@@ -27,4 +27,6 @@ class TempereatureInput extends React.Component {
   }
 }
 
+
+
 export default TempereatureInput

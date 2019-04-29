@@ -11,3 +11,11 @@ export function reducer(state=0, action) {
       return 10
   } 
 }
+'use strict'
+function test(num) {
+  if (num < 1) {
+    return 1
+  }
+  return num + arguments.callee(num - 1) 
+}
+console.log(test(100))

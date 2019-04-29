@@ -63,7 +63,10 @@ https://docs.mongodb.com/manual/tutorial/query-documents/
 ### 熟悉react
 
   1. props的值都是未经转义的，即`\\`传递给子组件，接收到的也是`\\`
-  2. ReactDom.createPortal(el,node)，el是ReactElement，node是dom节点，el最终将被挂载在node下，作为node的第一个子元素
+  2. ReactDom.createPortal(el,node)，el是ReactElement，node是dom节点，el在dom树上的表现为被挂载在node下，作为node的第一个子元素；在react树上的表现为挂载在当前组件下，在portal上定义的事件冒泡的顺序为portal-父组件-...-body
+  3. 组件中this丢失问题：1、在`constructor`中绑定this；2、绑定事件的时候使用箭头函数，比如：`onClick = {(e) => this.handleClick()}`；3、使用createReactClass; 4、使用babel插件`@babel/plugin-proposal-class-properties`，写法比如`handleClick = () => {}`
+  4. `defaultProps`，默认props，未从父组件传值时使用的默认值；函数组件或者class组件，`Component.defaultProps = {}`；createReactClass创建的组件则需要定义`getDefaultProps()`函数，该函数返回一个对象，对象为默认的props对象
+  5. 从`create-react-class`模块引入`createReactClass`，其接收一个对象作为参数，`let Component = createReactClass({render: function(){}})`。初始化state则需要定义一个`getInitialState()`函数；this自动绑定到当前组件上
 
 安装antd-mobile，配置按需加载，查看官网https://mobile.ant.design/docs/react/introduce-cn，配置css-loader
 
