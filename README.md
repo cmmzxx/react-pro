@@ -67,6 +67,22 @@ https://docs.mongodb.com/manual/tutorial/query-documents/
   3. 组件中this丢失问题：1、在`constructor`中绑定this；2、绑定事件的时候使用箭头函数，比如：`onClick = {(e) => this.handleClick()}`；3、使用createReactClass; 4、使用babel插件`@babel/plugin-proposal-class-properties`，写法比如`handleClick = () => {}`
   4. `defaultProps`，默认props，未从父组件传值时使用的默认值；函数组件或者class组件，`Component.defaultProps = {}`；createReactClass创建的组件则需要定义`getDefaultProps()`函数，该函数返回一个对象，对象为默认的props对象
   5. 从`create-react-class`模块引入`createReactClass`，其接收一个对象作为参数，`let Component = createReactClass({render: function(){}})`。初始化state则需要定义一个`getInitialState()`函数；this自动绑定到当前组件上
+  6. 这两段代码在功能上不同，展开运算符不查找原型链，但是解构赋值会查找原型链
+
+    ```js
+      function fn1(obj) {
+        let { x, y, ...z } = obj;
+        return { x, y, z };
+      }
+
+      function fn2(obj) {
+        let { x, ...n } = obj;
+        let { y, ...z } = n;
+        return { x, y, z };
+      }
+      fn1({x:1,'__proto__':{y:2}})
+      fn2({x:1,'__proto__':{y:2}})
+    ```
 
 安装antd-mobile，配置按需加载，查看官网https://mobile.ant.design/docs/react/introduce-cn，配置css-loader
 

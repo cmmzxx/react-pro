@@ -7,3 +7,10 @@ export function add() {
 export function sub(){
   return {type: types.SUB_GUN}
 }
+export function addAsync(){
+  return (dispatch) => {
+    setTimeout(() => {
+      dispatch(add())
+    }, 1000)
+  }
+}
